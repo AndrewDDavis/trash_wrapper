@@ -75,6 +75,12 @@ trash-wrapper() {
 
 if [[ $0 == "${BASH_SOURCE[0]}" ]]
 then
-    # the script was executed, so call the function
+    # the script was executed, so import dependencies and call the function
+    source ~/.bash_library.d/import_func.sh \
+        || return 63
+
+    import_func docsh err_msg \
+        || return 62
+
     trash-wrapper "$@"
 fi
