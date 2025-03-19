@@ -17,7 +17,7 @@ trash-wrapper() {
 
         dir-pattern :: trash-dir
 
-      - 'dir-pattern' is a glob pattern to match the canonical path of the directory
+      - 'dir-pattern' is a glob pattern to match the physical path of the directory
         tree in which the rule applies. This function resolves any symlinks in the path
         before matching the pattern by using \`pwd -P\`.
 
@@ -35,7 +35,7 @@ trash-wrapper() {
 
     local _pwd _tr_cmd _v=2
 
-    # canonical CWD
+    # physical CWD
     _pwd=$( pwd -P ) \
         || return
 
