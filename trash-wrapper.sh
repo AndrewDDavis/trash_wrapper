@@ -5,7 +5,7 @@ _deps=( docsh err_msg run_vrb )
 
 trash-wrapper() {
 
-    : "Wrapper for trash-cli that enables per-directory rules
+    : """Wrapper for trash-cli that enables per-directory rules
 
     Usage: trash-wrapper [options] {file} ...
 
@@ -40,7 +40,7 @@ trash-wrapper() {
 
     For the above example, the ~/.config/trash/dir_rules file contains the line:
     /mnt/chromeos/MyFiles* :: /mnt/chromeos/MyFiles/.Trash
-    "
+    """
 
     [[ -$# -eq 0  || $1 == @(-h|--help) ]] &&
         { docsh -TD || return 2; return; }
